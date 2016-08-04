@@ -1,0 +1,78 @@
+// ------------------------------------
+//
+// Tasks
+//
+// ------------------------------------
+
+
+.tasks-app {
+
+
+	// ------------------------------------
+	// Layout Columns
+	// ------------------------------------
+
+	article {
+		@include columns(7);
+		@include respond-to('mobile'){
+			margin-bottom: 2em;
+			/* Matt, we can do mobile specifi styles on anythin using this respond-to('mobile') call
+			 */
+		}
+	}
+
+	aside {
+		@include columns(4,1);
+	}
+
+	// ------------------------------------
+	// New Task Input
+	// ------------------------------------
+
+	.new {
+
+		.append {
+			cursor: pointer;
+			transition: all 200ms;
+			display: inline-block;
+			opacity: 0.5;
+			&:hover {
+				font-size: 2.25em;
+				opacity: 1;
+				transform: rotate(90deg);
+				top: 25%;
+			}
+			&:active {
+				opacity: 0.5;
+			}
+		}
+
+	}
+
+	// ------------------------------------
+	// Tasks List
+	// ------------------------------------
+
+	.tasks {
+
+		border: 1px solid $baseColor;
+		padding: 2em;
+
+		.task {
+
+			@extend %fancy-checkbox;
+			margin-bottom: 1em;
+			&:last-child {
+				margin-bottom: 0em;
+			}
+
+		}
+
+	}
+
+
+
+
+
+
+}

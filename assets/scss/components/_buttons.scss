@@ -1,0 +1,163 @@
+// ------------------------------------
+//
+// Body Content
+//
+// ------------------------------------
+
+button,
+.button,
+[class^="button"],
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+
+    font-family: $headingFont;
+    font-weight: normal !important;
+    font-size: 1em;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-decoration: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    display: inline-block;
+    text-transform: uppercase;
+    padding: 0.5em 1em;
+    border: 2px solid $textColor;
+    transition: all 200ms;
+
+    @include button-style(transparent, $textColor);
+
+    &:hover {
+        border: 2px solid lighten($textColor,50%);
+        text-decoration: none !important;
+    }
+
+    &:focus {
+        border-color: lighten($textColor,50%);
+        color: lighten($textColor,20%);
+    }
+
+    &.huge {
+        font-size: 1.25em;
+        font-weight: 600;
+        padding: 0.625em 2em;
+    }
+
+    &:after {
+        @include amnesty-iconify("\6a");
+        font-size: 0.75em;
+        top: 0rem;
+        margin-left: 1em;
+    }
+
+    &.full {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+button.primary,
+.button-primary,
+input.button-primary {
+
+    font-size: 1.5rem;
+    padding: 0.75em 1em;
+    border: 2px solid $primaryColor;
+
+    @include button-style($primaryColor, $textColor);
+
+    &:hover {
+        background-color: lighten($primaryColor,15%);
+        border: 2px solid lighten($primaryColor,15%);
+    }
+
+    &:focus {
+        border-color: lighten($textColor,50%);
+        //box-shadow: $shadowHover;
+    }
+}
+
+button.secondary,
+.button-secondary,
+input.button-secondary {
+    border: 2px solid $secondaryColor;
+	@include button-style($secondaryColor, white);
+
+    &:hover {
+        background-color: lighten($secondaryColor,20%);
+        border: 2px solid lighten($secondaryColor,20%);
+    }
+
+    &:focus {
+    }
+}
+
+button.transparent,
+.button-transparent,
+input.button-transparent {
+
+    font-size: 1.5rem;
+    padding: 0.75em 1em;
+    border: none;
+    box-shadow: none;
+    background: none;
+    color: $secondaryColor;
+
+    &:hover {
+        background: none;
+        color: $textColor;
+        border: none;
+        box-shadow: none;
+    }
+}
+
+button.facebook,
+.button-facebook,
+input.button-facebook {
+    border: 2px solid $socialFacebook;
+	@include button-style($socialFacebook, white);
+	padding-left: 0.6em;
+
+	&.disabled {
+		background: #9099ae;
+		color: white;
+		cursor: default;
+	}
+
+    &:hover {
+        border-color: $socialFacebook;
+    }
+
+    &:focus {
+        color: white;
+        background: lighten($socialFacebook,10%);
+    }
+
+    &:after { display: none; }
+}
+
+button.twitter,
+.button-twitter,
+input.button-twitter {
+
+    border: 2px solid $socialTwitter;
+	@include button-style($socialTwitter, white);
+
+	&.disabled {
+		background: #aebcc7;
+		color: white;
+		cursor: default;
+	}
+
+    &:hover {
+        border-color: $socialTwitter;
+    }
+
+    &:focus {
+        color: white;
+        background: lighten($socialTwitter,10%);
+    }
+
+    &:after { display: none; }
+}
